@@ -4,7 +4,7 @@ A very simple hyprland and waybar config. I've wasted 3 hours of my life on this
 
 ## Screenshot 
 
-![Screen][/imgs/screen.png]
+![Screen](/imgs/screen.png)
 
 ## How to apply
 

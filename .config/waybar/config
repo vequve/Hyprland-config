@@ -1,0 +1,66 @@
+
+// waybar config
+// 111121
+
+{
+"layer": "top",
+"position": "top",
+"modules-left": ["wlr/workspaces"],
+"modules-center": ["clock"],
+"modules-right":  ["pulseaudio","battery", "custom/offswitch"],
+
+"battery": {
+  "min-length": 5,
+  "states": {
+  "full": 90,
+  "warning": 30,
+  "critical": 15,
+  },
+  "tooltip": false,
+  "full-at": 95,
+  "format-plugged": "{icon} {capacity}%",
+  "format-charging": "{icon} {capacity}%",
+  "format": "{icon} {capacity}%",
+  "format-icons": ["", "", "", "", "", "", ""],
+},
+"wlr/workspaces": {
+     "sort-by-name": true
+     // "on-click": "/usr/local/bin/hyprctl dispatch workspace 3"
+
+},
+
+"clock": {
+  "format": " {:%a %b %d %H:%M}",
+  "tooltip": false,
+  "min-length": 18,
+},
+"custom/offswitch": {
+  "tooltip": false,
+  "format": "",
+  "interval": "once",
+  "on-click": "systemctl poweroff",
+},
+"network": {
+  "interval": 2,
+  "format-wifi": " {ipaddr}",
+  "format-ethernet": " {ipaddr}",
+  "format-linked": " {ipaddr}",
+  "format-disconnected": " Disconnected",
+  "format-disabled": "",
+  "tooltip": false,
+  "max-length": 20,
+  "min-length": 6,
+},
+"pulseaudio": {
+  "tooltip": false,
+  "min-length": 5,
+  "format": "{icon} {volume}%",
+  "format-bluetooth": "{icon} {volume}%",
+  "format-muted": "MUTE",
+  "format-icons": {
+  "headphone": "",
+  "headset": "",
+  "default": ["", "", ""],
+  },
+},
+}
